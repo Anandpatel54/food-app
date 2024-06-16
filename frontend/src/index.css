@@ -16,3 +16,32 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.header-content{
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.explore-menu-list::-webkit-scrollbar{
+  display: none;
+}
+.explore-menu hr{
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+}
+.explore-menu-item .active{
+  border: 3px solid tomato;
+  padding: 2px;
+  border-radius: 50%;
+}
+.explore-menu-item img{
+  cursor: pointer;
+}
