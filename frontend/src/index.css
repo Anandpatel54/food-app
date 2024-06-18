@@ -45,3 +45,6 @@ a {
 .explore-menu-item img{
   cursor: pointer;
 }
+.food-item{
+  animation: fadeIn 1s;
+}
