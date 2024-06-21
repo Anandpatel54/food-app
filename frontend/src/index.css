@@ -60,16 +60,21 @@ a {
     gap: 30px;
   }
   .navbar-right img{
-    width: 30px;
+    width: 33px;
   }
   .navbar-right button{
-    padding: 8px 25px;
-  }
-  .header{
-    height: 38vw;
+    padding: 8px 20px;
   }
   .header-content{
-    max-width: 45%;
+    max-width: 65%;
+    margin-bottom: 6vw;
+  }
+  .header-content p{
+    width: 42vw;
+  }
+  .explore-menu p{
+    max-width: 100%;
+    font-size: 14px;
   }
   
 }
@@ -93,9 +98,13 @@ a {
   }
   
   .header-content{
-    max-width: 60%;
+    max-width: 65%;
     font-size: 12px;
     margin-bottom: 6vw;
+  }
+  .explore-menu p{
+    max-width: 100%;
+    font-size: 14px;
   }
 }
 
@@ -111,7 +120,75 @@ a {
   .header-content p{
     display: none;
   }
+  .explore-menu p{
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+ .footer-copyright p{
+  text-align: center;
+  margin-bottom: 8vw;
+  font-size: 4vw;
+ }
+}
+@media (max-width: 600px) {
+  .navbar-menu{
+    display: none;
+  }
+  .navbar .logo{
+    width: 120px;
+  }
+  .navbar-right{
+    gap: 15px;
+  }
+  .navbar-right i{
+    font-size: 6vw;
+  }
+  .navbar-right img{
+    width: 33px;
+  }
+  .navbar-right button{
+    padding: 8px 15px;
+  }
+  .header-content{
+    max-width: 64%;
+    font-size: 10px;
+    margin-bottom: 6vw;
+  }
+  .header-content p{
+    display: none;
+  }
+  .header-content h2{
+     font-size: 5vw;
+  }
   .header-content button{
     padding: 2vw 3vw;
   }
+  .explore-menu p{
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .app-download{
+    max-width: 100%;
+  }
+  .app-download p{
+    margin-bottom: 3vw;
+  }
+  .app-download-platforms img{
+    width: 50%;
+  }
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+ .footer-copyright p{
+  text-align: center;
+  margin-bottom: 15vw;
+  font-size: 4vw;
+ }
 }
