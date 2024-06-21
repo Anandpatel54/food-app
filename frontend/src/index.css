@@ -8,10 +8,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   min-height: 100vh;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -47,6 +49,9 @@ a {
 }
 .food-item{
   animation: fadeIn 1s;
+}
+.login-popup-container{
+  animation: fadeIn 0.5s; 
 }
 @media (max-width: 1050px) {
   .navbar .logo{

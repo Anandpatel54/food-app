@@ -2,7 +2,7 @@ import { assets } from "../../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[#323232] text-[#d9d9d9] pt-20 pb-10 flex flex-col gap-[20px] mt-[100px]">
+    <footer className="footer bg-[#323232] text-[#d9d9d9] pt-20 pb-10 flex flex-col gap-[20px] mt-[100px]" id="footer">
       <div className="footer-content mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <div className="footer-content-left flex flex-col items-start gap-[20px]">

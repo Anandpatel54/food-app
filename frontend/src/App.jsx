@@ -4,12 +4,16 @@ import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
+import { useState } from "react";
+import Login from "./components/LoginPopup/Login";
 
 const App = () => {
+  const [showLogin, setShowLogin] = useState(false)
   return (
     <>
+    {showLogin?<Login setShowLogin={setShowLogin}/>:<></>}
       <div className="app w-[80%] m-auto">
-        <Navbar />
+        <Navbar setShowLogin={setShowLogin}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
