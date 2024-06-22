@@ -7,7 +7,7 @@ const Navbar = ({setShowLogin}) => {
 
   return (
     <div className="navbar flex justify-between items-center">
-      <img src={assets.logo} alt="" className="logo w-[10vw]" />
+      <Link to="/"><img src={assets.logo} alt="" className="logo w-[10vw]" /></Link>
       <ul className="navbar-menu flex list-none gap-8 text-lg text-gray-600">
         <Link to="/"
           className={`cursor-pointer ${
@@ -45,7 +45,7 @@ const Navbar = ({setShowLogin}) => {
       <div className="navbar-right flex items-center gap-[40px]">
         <i className="text-3xl ri-search-2-line"></i>
         <div className="navbar-search-icon relative">
-          <i className="text-3xl ri-shopping-cart-2-fill"></i>
+          <Link to="/cart"><i className="text-3xl ri-shopping-cart-2-fill"></i></Link>
           <div className="dot absolute min-w-[12px] min-h-[12px] bg-red-500 rounded-[5px] top-[-7px] right-[-6px]"></div>
         </div>
         <button onClick={()=>setShowLogin(true)} className="bg-transparent text-[#49577e] px-4 py-2 border border-blue-500 rounded-md hover:bg-[#fff4f2] hover:text-black transition duration-300 ease-in-out rounded-[50px]">

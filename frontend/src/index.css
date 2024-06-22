@@ -196,4 +196,17 @@ a {
   margin-bottom: 15vw;
   font-size: 4vw;
  }
+ .cart-items-title{
+  max-width: 100%;
+ }
+ .cart-items-title p{
+  font-size: 2.8vw;
+ }
+ 
+ .cart-bottom{
+  flex-direction: column-reverse;
+ }
+ .cart-promocode{
+  justify-content: start;
+ }
 }
