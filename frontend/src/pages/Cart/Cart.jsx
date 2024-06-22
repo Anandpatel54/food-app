@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
+
+    const navigate = useNavigate()
 
   return (
     <div className="cart mt-4">
@@ -50,20 +54,20 @@ const Cart = () => {
           <div>
             <div className="cart-total-details flex justify-between text-[#555]">
               <p>Sub Total</p>
-              <p>{0}</p>
+              <p>₹{getTotalCartAmount()}</p>
             </div>
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
               <p>Delivery Free</p>
-              <p>{2}</p>
+              <p>₹{10}</p>
             </div>
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
               <b>Total</b>
-              <b>{0}</b>
+              <b>₹{getTotalCartAmount()+10}</b>
             </div>
           </div>
-          <button className="border-none text-white bg-[#FA853C] w-[max(15vw,200px)] py-[12px] rounded-lg text-sm">
+          <button onClick={()=>navigate('/order')} className="border-none text-white bg-[#FA853C] w-[max(15vw,200px)] py-[12px] rounded-lg text-sm">
             PROCEED TO CHECKOUT
           </button>
         </div>
@@ -73,8 +77,14 @@ const Cart = () => {
               If you have a promo code, Enter it here
             </p>
             <div className="cart-promocode-input mt-2 flex justify-between items-center bg-gray-300 rounded-md">
-              <input className="bg-transparent rounded-none outline-none pl-[10px]" type="text" placeholder="promo code" />
-              <button className=" w-[max(10vw,150px)] py-[10px] px-[5px] bg-zinc-600 border-none text-white rounded-lg">APPLY</button>
+              <input
+                className="bg-transparent rounded-none outline-none pl-[10px]"
+                type="text"
+                placeholder="promo code"
+              />
+              <button className=" w-[max(10vw,150px)] py-[10px] px-[5px] bg-zinc-600 border-none text-white rounded-lg">
+                APPLY
+              </button>
             </div>
           </div>
         </div>

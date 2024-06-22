@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import {Link} from "react-router-dom"
+import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState("home");
+
+   const {getTotalCartAmount} = useContext(StoreContext);
 
   return (
     <div className="navbar flex justify-between items-center">
@@ -46,7 +49,7 @@ const Navbar = ({setShowLogin}) => {
         <i className="text-3xl ri-search-2-line"></i>
         <div className="navbar-search-icon relative">
           <Link to="/cart"><i className="text-3xl ri-shopping-cart-2-fill"></i></Link>
-          <div className="dot absolute min-w-[12px] min-h-[12px] bg-red-500 rounded-[5px] top-[-7px] right-[-6px]"></div>
+         <div className={getTotalCartAmount()===0?"":"dot absolute bg-red-500 w-[9px] h-[10px] top-[23%] right-[-18%] rounded-full"}></div>
         </div>
         <button onClick={()=>setShowLogin(true)} className="bg-transparent text-[#49577e] px-4 py-2 border border-blue-500 rounded-md hover:bg-[#fff4f2] hover:text-black transition duration-300 ease-in-out rounded-[50px]">
           Sign in
