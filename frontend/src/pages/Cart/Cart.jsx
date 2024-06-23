@@ -6,7 +6,7 @@ const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="cart mt-4">
@@ -58,16 +58,19 @@ const Cart = () => {
             </div>
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
-              <p>Delivery Free</p>
-              <p>₹{10}</p>
+              <p>Delivery Charge</p>
+              <p>₹{getTotalCartAmount()===0?0:10}</p>
             </div>
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
               <b>Total</b>
-              <b>₹{getTotalCartAmount()+10}</b>
+              <b>₹{getTotalCartAmount()===0?0:getTotalCartAmount() + 10}</b>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')} className="border-none text-white bg-[#FA853C] w-[max(15vw,200px)] py-[12px] rounded-lg text-sm">
+          <button
+            onClick={() => navigate("/order")}
+            className="border-none text-white bg-[#FA853C] w-[max(15vw,200px)] py-[12px] rounded-lg text-sm"
+          >
             PROCEED TO CHECKOUT
           </button>
         </div>
