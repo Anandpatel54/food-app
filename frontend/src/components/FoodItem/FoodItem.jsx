@@ -3,8 +3,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  
-  const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
     <div className="food-item w-full mx-auto rounded-md shadow-md transition duration-300 ease-in-ou">
@@ -48,7 +47,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           {description}
         </p>
         <p className="food-item-price text-orange-600 text-lg font-semibold">
-        ₹{price}
+          ₹{price}
         </p>
       </div>
     </div>
