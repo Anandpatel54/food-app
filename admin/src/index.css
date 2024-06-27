@@ -23,6 +23,16 @@ hr{
     height: 1px;
     background-color: #a9a9a9;
 }
+.sidebar-option.active{
+    background-color: #fff0ed;
+    border-color: tomato;
+    transition: 0.3s;
+}
+.add-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}   
 @media (max-width: 900px) {
     .sidebar-option p{
         display: none;
