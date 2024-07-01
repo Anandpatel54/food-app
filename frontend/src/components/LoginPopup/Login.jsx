@@ -6,7 +6,7 @@ import axios from "axios";
 const Login = ({ setShowLogin }) => {
   const { url, setToken } = useContext(StoreContext);
   const [currState, setcurrState] = useState("Login");
-  const [data, setDatas] = useState({
+  const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
@@ -15,7 +15,7 @@ const Login = ({ setShowLogin }) => {
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setDatas((data) => ({ ...data, [name]: value }));
+    setData((data) => ({ ...data, [name]: value }));
   };
   const onLogin = async (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ const Login = ({ setShowLogin }) => {
     if (response.data.success) {
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
+       setShowLogin(false);
     } else {
       alert(response.data.message);
     }
