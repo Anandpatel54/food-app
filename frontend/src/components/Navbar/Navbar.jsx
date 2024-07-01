@@ -1,14 +1,18 @@
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const navigate = useNavigate();
 
-
-  const { getTotalCartAmount,token,setToken } = useContext(StoreContext);
-
+  const logout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  };
   return (
     <div className="navbar flex justify-between items-center">
       <Link to="/">
@@ -66,14 +70,32 @@ const Navbar = ({ setShowLogin }) => {
             }
           ></div>
         </div>
-       {!token?<button onClick={() => setShowLogin(true)} className="bg-transparent text-[#49577e] px-4 py-2 border border-blue-500 rounded-md hover:bg-[#fff4f2] hover:text-black transition duration-300 ease-in-out rounded-[50px]">Sign in</button>:<div className="navbar-profile">
-        <img src={assets.parcel_icon} alt=""/>
-        <ul className="nav-profile-dropdown">
-          <li><img src={assets.bag_icon} alt=""/><p>Orders</p></li>
-          <hr />
-          <li><img src={assets.logout_icon} alt=""/><p>Logout</p></li>
-        </ul>
-        </div>}
+        {!token ? (
+          <button
+            onClick={() => setShowLogin(true)}
+            className="bg-transparent text-[#49577e] px-4 py-2 border border-blue-500 rounded-md hover:bg-[#fff4f2] hover:text-black transition duration-300 ease-in-out rounded-[50px]"
+          >
+            Sign in
+          </button>
+        ) : (
+          <div className="navbar-profile relative">
+            <img className="" src={assets.profile_icon} alt="" />
+            <ul className="nav-profile-dropdown absolute hidden right-0">
+              <li className="flex items-center justify-center gap-[10px] cursor-pointer">
+                <img className="w-[20px]" src={assets.bag_icon} alt="" />
+                <p className="text-[15px]">Orders</p>
+              </li>
+              <hr />
+              <li
+                onClick={logout}
+                className="flex items-center justify-center gap-[10px] cursor-pointer"
+              >
+                <img className="w-[20px]" src={assets.logout_icon} alt="" />
+                <p className="text-[15px]">Logout</p>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
