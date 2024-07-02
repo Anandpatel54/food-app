@@ -17,22 +17,44 @@ const Login = ({ setShowLogin }) => {
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
+
   const onLogin = async (event) => {
     event.preventDefault();
     let newUrl = url;
-    if (currState === "login") {
+    if (currState === "Login") {
       newUrl += "/api/user/login";
     } else {
       newUrl += "/api/user/register";
     }
-    const response = await axios.post(newUrl, data);
 
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-       setShowLogin(false);
-    } else {
-      alert(response.data.message);
+    try {
+      const response = await axios.post(newUrl, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setShowLogin(false);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 200 range
+        console.error("Server Error:", error.response.data);
+        alert(`Error: ${error.response.data.message}`);
+      } else if (error.request) {
+        // No response received from server
+        console.error("Network Error:", error.request);
+        alert("Network error, please try again.");
+      } else {
+        // Other errors
+        console.error("Error:", error.message);
+        alert(`Error: ${error.message}`);
+      }
     }
   };
 
@@ -93,7 +115,7 @@ const Login = ({ setShowLogin }) => {
         </button>
         <div className="login-popup condition flex items-start gap-[8px] mt-[-15px]">
           <input className="mt-[5px]" type="checkbox" required />
-          <p>By continuing, i agree to the terms of use & privacy policy</p>
+          <p>By continuing, I agree to the terms of use & privacy policy</p>
         </div>
         {currState === "Login" ? (
           <p>
@@ -107,7 +129,7 @@ const Login = ({ setShowLogin }) => {
           </p>
         ) : (
           <p>
-            Already have a account?{" "}
+            Already have an account?{" "}
             <span
               className="cursor-pointer text-[#E9721A] font-bold"
               onClick={() => setcurrState("Login")}
