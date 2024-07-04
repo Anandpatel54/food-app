@@ -81,7 +81,7 @@ const PlaceOrder = () => {
         <input
           className="mb-[15px] w-[100%] p-[10px] border border-gray-300 rounded-md focus:outline-tomato"
           type="email
-          required"
+            required"
           name="email"
           onChange={onChangeHandlar}
           value={data.email}

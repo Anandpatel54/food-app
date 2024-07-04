@@ -13,7 +13,7 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  Address: {
+  address: {
     type: Object,
     required: true,
   },
@@ -23,7 +23,7 @@ const orderSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   payment: {
     type: Boolean,
@@ -33,4 +33,5 @@ const orderSchema = new mongoose.Schema({
 
 const orderModel =
   mongoose.models.order || mongoose.model("order", orderSchema);
+
 export default orderModel;
