@@ -157,13 +157,13 @@ const PlaceOrder = () => {
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
               <p>Delivery Charge</p>
-              <p>₹{getTotalCartAmount() === 0 ? 0 : 10}</p>
+              <p>₹{getTotalCartAmount() === 0 ? 0 : 20}</p>
             </div>
             <hr className="my-[10px]" />
             <div className="cart-total-details flex justify-between text-[#555]">
               <b>Total</b>
               <b>
-                ₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 10}
+                ₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 20}
               </b>
             </div>
           </div>
