@@ -230,4 +230,9 @@ a {
   .cart-promocode {
     justify-content: start;
   }
+  .my-orders-order{
+    grid-template-columns: 1fr 2fr 1fr;
+    row-gap: 5px;
+    font-size: 12px;
+  }
 }
