@@ -18,42 +18,42 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.header-content{
+.header-content {
   animation-name: fadeIn;
   animation-duration: 3s;
 }
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
-.explore-menu-list::-webkit-scrollbar{
+.explore-menu-list::-webkit-scrollbar {
   display: none;
 }
-.explore-menu hr{
+.explore-menu hr {
   margin: 10px 0px;
   height: 2px;
   background-color: #e2e2e2;
   border: none;
 }
-.explore-menu-item .active{
+.explore-menu-item .active {
   border: 3px solid tomato;
   padding: 2px;
   border-radius: 50%;
 }
-.explore-menu-item img{
+.explore-menu-item img {
   cursor: pointer;
 }
-.food-item{
+.food-item {
   animation: fadeIn 1s;
 }
-.login-popup-container{
-  animation: fadeIn 0.5s; 
+.login-popup-container {
+  animation: fadeIn 0.5s;
 }
-.navbar-profile:hover .nav-profile-dropdown{
+.navbar-profile:hover .nav-profile-dropdown {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -64,161 +64,170 @@ a {
   outline: 2px solid white;
   list-style: none;
   z-index: 1;
-} 
+}
+.verify .spinner {
+  border: 5px solid #dadada;
+  border-top-color: tomato;
+  animation: rotate 1s infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 1050px) {
-  .navbar .logo{
+  .navbar .logo {
     width: 140px;
   }
-  .navbar-menu{
+  .navbar-menu {
     gap: 20px;
     font-size: 17px;
   }
-  .navbar-right{
+  .navbar-right {
     gap: 30px;
   }
-  .navbar-right img{
+  .navbar-right img {
     width: 33px;
   }
-  .navbar-right button{
+  .navbar-right button {
     padding: 8px 20px;
   }
-  .header-content{
+  .header-content {
     max-width: 65%;
     margin-bottom: 6vw;
   }
-  .header-content p{
+  .header-content p {
     width: 42vw;
   }
-  .explore-menu p{
+  .explore-menu p {
     max-width: 100%;
     font-size: 14px;
   }
-  
 }
 @media (max-width: 900px) {
-  .navbar .logo{
+  .navbar .logo {
     width: 120px;
   }
-  .navbar-menu{
+  .navbar-menu {
     gap: 15px;
     font-size: 15px;
   }
-  .navbar-right{
+  .navbar-right {
     gap: 20px;
   }
-  .navbar-right img{
+  .navbar-right img {
     width: 20px;
   }
-  .navbar-right button{
+  .navbar-right button {
     padding: 7px 20px;
     font-size: 15px;
   }
-  
-  .header-content{
+
+  .header-content {
     max-width: 65%;
     font-size: 12px;
     margin-bottom: 6vw;
   }
-  .explore-menu p{
+  .explore-menu p {
     max-width: 100%;
     font-size: 14px;
   }
 }
 
 @media (max-width: 750px) {
-  .navbar-menu{
+  .navbar-menu {
     display: none;
   }
-  .header-content{
+  .header-content {
     max-width: 65%;
     font-size: 10px;
     margin-bottom: 6vw;
   }
-  .header-content p{
+  .header-content p {
     display: none;
   }
-  .explore-menu p{
+  .explore-menu p {
     max-width: 100%;
     font-size: 14px;
   }
-  .footer-content{
+  .footer-content {
     display: flex;
     flex-direction: column;
     gap: 35px;
   }
- .footer-copyright p{
-  text-align: center;
-  margin-bottom: 8vw;
-  font-size: 4vw;
- }
+  .footer-copyright p {
+    text-align: center;
+    margin-bottom: 8vw;
+    font-size: 4vw;
+  }
 }
 @media (max-width: 600px) {
-  .navbar-menu{
+  .navbar-menu {
     display: none;
   }
-  .navbar .logo{
+  .navbar .logo {
     width: 120px;
   }
-  .navbar-right{
+  .navbar-right {
     gap: 15px;
   }
-  .navbar-right i{
+  .navbar-right i {
     font-size: 6vw;
   }
-  .navbar-right img{
+  .navbar-right img {
     width: 33px;
   }
-  .navbar-right button{
+  .navbar-right button {
     padding: 8px 15px;
   }
-  .header-content{
+  .header-content {
     max-width: 64%;
     font-size: 10px;
     margin-bottom: 6vw;
   }
-  .header-content p{
+  .header-content p {
     display: none;
   }
-  .header-content h2{
-     font-size: 5vw;
+  .header-content h2 {
+    font-size: 5vw;
   }
-  .header-content button{
+  .header-content button {
     padding: 2vw 3vw;
   }
-  .explore-menu p{
+  .explore-menu p {
     max-width: 100%;
     font-size: 14px;
   }
-  .app-download{
+  .app-download {
     max-width: 100%;
   }
-  .app-download p{
+  .app-download p {
     margin-bottom: 3vw;
   }
-  .app-download-platforms img{
+  .app-download-platforms img {
     width: 50%;
   }
-  .footer-content{
+  .footer-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
- .footer-copyright p{
-  text-align: center;
-  margin-bottom: 15vw;
-  font-size: 4vw;
- }
- .cart-items-title{
-  max-width: 100%;
- }
- .cart-items-title p{
-  font-size: 2.8vw;
- }
- 
- .cart-bottom{
-  flex-direction: column-reverse;
- }
- .cart-promocode{
-  justify-content: start;
- }
+  .footer-copyright p {
+    text-align: center;
+    margin-bottom: 15vw;
+    font-size: 4vw;
+  }
+  .cart-items-title {
+    max-width: 100%;
+  }
+  .cart-items-title p {
+    font-size: 2.8vw;
+  }
+
+  .cart-bottom {
+    flex-direction: column-reverse;
+  }
+  .cart-promocode {
+    justify-content: start;
+  }
 }
