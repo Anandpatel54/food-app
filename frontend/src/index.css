@@ -175,8 +175,12 @@ a {
     font-size: 6vw;
   }
   .navbar-right img {
-    width: 33px;
+    width: 30px;
   }
+  .profile-icon{
+    width: 12px;
+  }
+
   .navbar-right button {
     padding: 8px 15px;
   }

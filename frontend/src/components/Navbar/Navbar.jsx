@@ -81,7 +81,10 @@ const Navbar = ({ setShowLogin }) => {
           <div className="navbar-profile relative">
             <img className="" src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown absolute hidden right-0">
-              <li onClick={()=>navigate("/myorders")} className="flex items-center justify-center gap-[10px] cursor-pointer">
+              <li
+                onClick={() => navigate("/myorders")}
+                className="flex items-center justify-center gap-[10px] cursor-pointer"
+              >
                 <img className="w-[20px]" src={assets.bag_icon} alt="" />
                 <p className="text-[15px]">Orders</p>
               </li>

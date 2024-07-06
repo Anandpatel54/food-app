@@ -48,7 +48,7 @@ const MyOrders = () => {
                 <span className="text-[#E56C14]">&#x25cf;</span>
                 <b className="font-medium">{order.status}</b>
               </p>
-            <button className="border-none py-[10px] px-[0px] rounded-md bg-[#ffe1e1] text-[#454545]">Track Order</button>
+            <button onClick={fatchOrders} className="border-none py-[10px] px-[0px] rounded-md bg-[#ffe1e1] text-[#454545]">Track Order</button>
             </div>
           );
         })}
