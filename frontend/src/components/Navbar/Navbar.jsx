@@ -5,7 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const { token, setToken, cartCount } = useContext(StoreContext);
   const navigate = useNavigate();
 
   const logout = () => {
@@ -62,13 +62,11 @@ const Navbar = ({ setShowLogin }) => {
           <Link to="/cart">
             <i className="text-3xl ri-shopping-cart-2-fill"></i>
           </Link>
-          <div
-            className={
-              getTotalCartAmount() === 0
-                ? ""
-                : "dot absolute bg-red-500 w-[9px] h-[10px] top-[23%] right-[-18%] rounded-full"
-            }
-          ></div>
+          {cartCount > 0 && (
+            <div className="dot absolute bg-red-500 w-3  h-4 top-0 right-[-20%] rounded-full flex items-center justify-center text-white text-xs">
+              {cartCount}
+            </div>
+          )}
         </div>
         {!token ? (
           <button
@@ -79,10 +77,10 @@ const Navbar = ({ setShowLogin }) => {
           </button>
         ) : (
           <div className="navbar-profile relative">
-            <img className="" src={assets.profile_icon} alt="" />
+            <i className="ri-user-3-fill text-3xl cursor-pointer"></i>
             <ul className="nav-profile-dropdown absolute hidden right-0">
               <li
-                onClick={() => navigate("/myorders")}
+                onClick={()=> navigate("/myorders")}
                 className="flex items-center justify-center gap-[10px] cursor-pointer"
               >
                 <img className="w-[20px]" src={assets.bag_icon} alt="" />

@@ -1,4 +1,3 @@
-import e from "express";
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
@@ -7,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing user orderr for frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://localhost:5174";
+  const frontend_url = "http://localhost:5173";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
