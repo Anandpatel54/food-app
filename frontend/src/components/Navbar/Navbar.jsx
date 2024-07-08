@@ -11,7 +11,7 @@ const Navbar = ({ setShowLogin }) => {
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
-    navigate("/");
+    navigate("/");  
   };
   return (
     <div className="navbar flex justify-between items-center">
@@ -40,8 +40,8 @@ const Navbar = ({ setShowLogin }) => {
         <a
           href="#app-download"
           className={`cursor-pointer ${
-            menu === "mobile-app" ? "text-orange-500" : ""
-          }`}
+              menu === "mobile-app" ? "text-orange-500" : ""
+            }`}
           onClick={() => setMenu("mobile-app")}
         >
           Mobile App
