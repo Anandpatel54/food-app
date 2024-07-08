@@ -6,7 +6,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-//  const url = "https://food-app-backend-runl.onrender.com"
+ const url = "https://food-app-backend-runl.onrender.com"
   const [token, setToken] = useState("");
   const [food_list, setFoodlist] = useState([]);
   const [cartCount, setCartCount] = useState(0);
