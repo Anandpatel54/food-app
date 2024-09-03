@@ -1,16 +1,16 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
- const url = "https://food-app-backend-runl.onrender.com"
+ const url = "http://localhost:4000"
   const [token, setToken] = useState("");
   const [food_list, setFoodlist] = useState([]);
   const [cartCount, setCartCount] = useState(0);
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const addToCart = async (itemId) => {
     setCartItems((prev) => {
